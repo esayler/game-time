@@ -1,7 +1,7 @@
 {
-  "name": "game-time-starter-kit",
+  "name": "game-time",
   "version": "1.0.0",
-  "description": "A starter kit for Turing School's Game Time project.",
+  "description": "Eric and Justin's Game Time project.",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/turingschool-examples/game-time-starter-kit.git"
+    "url": "https://github.com/esayler/game-time"
   },
-  "author": "Steve Kinney",
+  "author": "Eric Sayler",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/turingschool-examples/game-time-starter-kit/issues"
+    "url": "https://github.com/esayler/game-time/issues"
   },
-  "homepage": "https://github.com/turingschool-examples/game-time-starter-kit",
+  "homepage": "https://github.com/esayler/game-time",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.11.4",
