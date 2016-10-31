@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/esayler/game-time.png?label=ready&title=Ready)](http://waffle.io/esayler/game-time)
+
 # Game Time Starter Kit
 
 To install the dependencies:
