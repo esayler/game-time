@@ -1,20 +1,34 @@
-const assert = require('chai').assert;
-const expect = require('chai').expect;
-const should = require('chai').should();
-
+// import lolex from 'lolex';
+import sinon from 'sinon';
 import Player from '../lib/player'
 import Game from '../lib/game'
 
+const assert = require('chai').assert;
+const expect = require('chai').expect;
+const should = require('chai').should();
+// const sinon = require('sinon/pkg/sinon');
+
 describe('Player', function() {
   before(function() {
-    // runs before all tests in this block
-    var g = new Game('canvas');
+    // var canvas = { fillRect: function() {}};
+    // var spy = sinon.spy(canvas, "fillRect");
+    // // runs before all tests in this block
+    // var g = new Game(canvas);
+
+
   });
 
   beforeEach(function() {
     // runs before each test in this block
-    var p1 = new Player(g, 1);
-    var p2 = new Player(g, 2);
+    // let game = sinon.createStubInstance(Game);
+
+    // var canvas = { fillRect: function() {} };
+    var game = { constructor: function() {} };
+
+    var spy = sinon.spy(game, "constructor");
+
+    var p1 = new Player(game, 1);
+    var p2 = new Player(game, 2);
   });
 
   it('should have a constructor', function() {
