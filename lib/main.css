@@ -10,4 +10,5 @@
 
 #canvas2 { /* Background */
   z-index: 0;
+  background: url("../images/gameMap1.png");
 }
