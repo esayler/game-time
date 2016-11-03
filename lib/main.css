@@ -1,5 +1,13 @@
-#canvas {
+#canvas1, #canvas2 {
+  position: absolute;
   display: block;
   margin: auto;
   border: 1px dashed;
+}
+#canvas1 {
+  z-index: 1;
+}
+
+#canvas2 { /* Background */
+  z-index: 0;
 }
