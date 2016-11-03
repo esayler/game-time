@@ -2,4 +2,9 @@
   display: block;
   margin: auto;
   border: 1px dashed;
+  background: url('./images/bg_grasslands.png');
+}
+
+.background-canvas {
+
 }
