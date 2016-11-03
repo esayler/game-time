@@ -1,0 +1,7 @@
+require('./player-test')
+// require('./keyboard-test')
+// require('./tilemap-test')
+// require('./game-test')
+// require('./bullet-test')
+// require('./avatar-test')
+// require('./platform-collision-test')
