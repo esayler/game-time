@@ -3,14 +3,16 @@
   width: 100%;
   height: auto;
   margin: auto;
-  border: 1px dashed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
 }
 
 #bg-layer {
-  border: 1px dashed;
   z-index: -999;
-  background: url("../images/gameMap3.png") no-repeat center #fff;
-  /*background-repeat: no-repeat;*/
+  background: url("../images/gameMap4.png") no-repeat center #fff;
   background-size: cover;
 
 }
