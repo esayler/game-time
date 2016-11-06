@@ -1,10 +1,20 @@
-#canvas {
-  display: block;
+#bg-layer, #fg-layer {
+  position: fixed;
+  width: 100%;
+  height: auto;
   margin: auto;
   border: 1px dashed;
-  background: url('./images/bg_grasslands.png');
 }
 
-.background-canvas {
+#bg-layer {
+  border: 1px dashed;
+  z-index: -999;
+  background: url("../images/gameMap3.png") no-repeat center #fff;
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
 
+}
+
+#fg-layer {
+  z-index: 999;
 }
