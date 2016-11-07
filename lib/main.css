@@ -1,3 +1,8 @@
+document {
+  font-family: Sans-Serif;
+}
+
+
 #bg-layer, #fg-layer {
   position: fixed;
   width: 100%;
