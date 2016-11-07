@@ -1,13 +1,11 @@
-document {
-  font-family: Sans-Serif;
+@font-face {
+  font-family: "Carter One";
+  src: url("../fonts/CarterOne.ttf");
 }
 
-
-#bg-layer, #fg-layer {
+#bg-layer, #fg-layer, #hud-layer {
   position: fixed;
   width: 100%;
-  height: auto;
-  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
@@ -16,12 +14,16 @@ document {
 }
 
 #bg-layer {
-  z-index: -999;
+  z-index: 0;
   background: url("../images/gameMap4.png") no-repeat center #fff;
   background-size: cover;
 
 }
 
+#hud-layer {
+  z-index: 1;
+}
+
 #fg-layer {
-  z-index: 999;
+  z-index: 2;
 }
