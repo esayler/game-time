@@ -1,7 +1,11 @@
-require('./player-test')
-// require('./keyboard-test')
-// require('./tilemap-test')
-// require('./game-test')
-// require('./bullet-test')
-// require('./avatar-test')
-// require('./collision-test')
+
+require('./player-test');
+require('./collision-test');
+
+const chai = require('chai');
+const dirtyChai = require('dirty-chai');
+
+chai.use(dirtyChai);
+
+const expect = chai.expect;
+const should = chai.should();
