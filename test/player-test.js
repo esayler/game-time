@@ -43,14 +43,14 @@ describe('Player', function() {
 
     it('should have an id', function() {
       var p1 = new Player({});
-      p1.should.exist
+      p1.should.exist()
       p1.id.should.eql(1);
 
     });
     it('should have a position "x" and "y"', function() {
       var p1 = new Player({});
-      p1.should.exist;
-      p1.position.should.exist;
+      p1.should.exist();
+      p1.position.should.exist();
       p1.position.should.include.keys('x');
       p1.position.x.should.eql(0);
       p1.position.should.include.keys('y');
@@ -58,15 +58,15 @@ describe('Player', function() {
     });
     it('should have an appropriate properties "width" and "height"', function() {
       var p1 = new Player({});
-      p1.size.should.exist;
+      p1.size.should.exist();
       p1.size.should.include.keys('width');
-      p1.size.width.should.exist;
+      p1.size.width.should.exist();
       p1.size.should.include.keys('height');
-      p1.size.height.should.exist;
+      p1.size.height.should.exist();
     });
     it('should start with no velocity', function() {
       var p1 = new Player({});
-      p1.velocity.should.exist;
+      p1.velocity.should.exist();
       p1.velocity.should.include.keys('x');
       p1.velocity.x.should.eql(0);
       p1.velocity.should.include.keys('y');
@@ -74,7 +74,7 @@ describe('Player', function() {
     });
     it('should start with a speed', function() {
       var p1 = new Player({});
-      p1.speed.should.exist;
+      p1.speed.should.exist();
       p1.speed.should.be.at.least(2);
     });
   });
@@ -83,7 +83,8 @@ describe('Player', function() {
     describe('Player#jump()', function() {
       it('should be able to jump', function() {
         var p1 = new Player({});
-        p1.jump.should.exist;
+        p1.jump.should.exist();
+        p1.jump().should.be.ok();
         // expect(p1.jump()).to.change(p1, p1.position.y);
         // p1.jump();
         // p1.position.y.should.
@@ -91,21 +92,21 @@ describe('Player', function() {
 
       it('should be able to double jump while jumping', function() {
         var p1 = new Player({});
-        p1.jump.should.exist;
+        p1.jump.should.exist();
         p1.jumping = true;
-        p1.jump().should.be.ok;
+        p1.jump().should.be.ok();
       });
 
       it('should be not be able to triple jump', function() {
         var p1 = new Player({});
-        p1.jump.should.exist;
+        p1.jump.should.exist();
         p1.jumping = false;
-        p1.jump().should.be.ok;
-        p1.jumping.should.be.true;
+        p1.jump().should.be.ok();
+        p1.jumping.should.be.true();
         p1.jumpcount.should.eql(1);
-        p1.jump().should.be.ok;
+        p1.jump().should.be.ok();
         p1.jumpcount.should.eql(2);
-        p1.jump().should.not.be.ok;
+        p1.jump().should.not.be.ok();
       });
 
       it.skip('should be not be able to jump repeatedly while holding down jump button', function() {
@@ -150,9 +151,9 @@ describe('Player', function() {
 
       it('should be not be able to shoot right after shooting a bullet', function() {
         var p1 = new Player({});
-        p1.shoot().should.be.ok;
+        p1.shoot().should.be.ok();
         p1.bullets.should.have.length.of.at.least(1);
-        p1.shoot().should.not.be.ok;
+        p1.shoot().should.not.be.ok();
         p1.bullets.should.not.change;
 
       });
