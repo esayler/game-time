@@ -60,9 +60,9 @@ describe('Player', function() {
       var p1 = new Player({});
       p1.size.should.exist;
       p1.size.should.include.keys('width');
-      p1.size.width.should.eql(20);
+      p1.size.width.should.exist;
       p1.size.should.include.keys('height');
-      p1.size.height.should.eql(20);
+      p1.size.height.should.exist;
     });
     it('should start with no velocity', function() {
       var p1 = new Player({});
@@ -88,12 +88,26 @@ describe('Player', function() {
         // p1.jump();
         // p1.position.y.should.
       });
-      it('should be not be able to jump while jumping', function() {
+
+      it('should be able to double jump while jumping', function() {
         var p1 = new Player({});
         p1.jump.should.exist;
         p1.jumping = true;
+        p1.jump().should.be.ok;
+      });
+
+      it('should be not be able to triple jump', function() {
+        var p1 = new Player({});
+        p1.jump.should.exist;
+        p1.jumping = false;
+        p1.jump().should.be.ok;
+        p1.jumping.should.be.true;
+        p1.jumpcount.should.eql(1);
+        p1.jump().should.be.ok;
+        p1.jumpcount.should.eql(2);
         p1.jump().should.not.be.ok;
       });
+
       it.skip('should be not be able to jump repeatedly while holding down jump button', function() {
         //;
       });
@@ -111,7 +125,6 @@ describe('Player', function() {
         var p1 = new Player({position: { x: 100, y: 100}});
         p1.left();
         p1.position.x.should.decrease;
-
       });
 
     });
@@ -127,25 +140,26 @@ describe('Player', function() {
     });
 
     describe('Player#shoot()', function() {
-      it.skip('should be able to shoot bullets', function() {
+      it('should be able to shoot bullets', function() {
         var g = new Game({});
         var p1 = new Player({});
         p1.shoot();
-        g.bullets.should.have.length.of.at.least(1);
+        p1.bullets.should.have.length.of.at.least(1);
 
       });
 
-      it.skip('should be not be able to shoot right after shooting a bullet', function() {
+      it('should be not be able to shoot right after shooting a bullet', function() {
         var p1 = new Player({});
-        p1.shoot();
-        //Sinon timer
-        p1.shoot();
-        //should not shoot a bullet
+        p1.shoot().should.be.ok;
+        p1.bullets.should.have.length.of.at.least(1);
+        p1.shoot().should.not.be.ok;
+        p1.bullets.should.not.change;
 
       });
     });
 
     describe('Player#update()', function() {
+      //TODO: decouple keyboard from player update function()
       it.skip('should update player position', function() {
         var p1 = new Player({ position: { x: 100, y: 100} });
         p1.update().should.change(p1, p1.position.y);
@@ -157,7 +171,5 @@ describe('Player', function() {
       });
 
     });
-
-
   });
 });
