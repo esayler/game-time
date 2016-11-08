@@ -1,10 +1,8 @@
 import sinon from 'sinon';
-import Player from '../lib/player'
-import Game from '../lib/game'
-import Platform from '../lib/platform'
-import Keyboard from '../lib/keyboard'
-import Bullet from '../lib/bullet'
-import { platformCollisionCheck, playerCollisionCheck, projectileHitCheck } from '../lib/collision'
+import Player from '../lib/player';
+import Platform from '../lib/platform';
+import Keyboard from '../lib/keyboard';
+import { platformCollisionCheck, playerCollisionCheck, projectileHitCheck } from '../lib/collision';
 
 // var expect = chai.expect
 // ...
@@ -37,7 +35,7 @@ describe('Collision Manager', function() {
       it('should stop a player from falling through a platform', function() {
         this.platforms[0].passThrough = true;
         this.p1.position = { x: 150, y: 0 };
-        this.p1.velocity = { x: 0, y: 1 }
+        this.p1.velocity = { x: 0, y: 1 };
         const playerMovingDown = this.p1;
         const collided = platformCollisionCheck(playerMovingDown, this.platforms);
         collided.should.include(true);
@@ -198,7 +196,7 @@ describe('Collision Manager', function() {
 
     it('should not allow a player to fall through the top of another player', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 }
+      this.players[0].velocity = { x: 0, y: 1 };
       this.players[1].position = { x: 500, y: 550 };
 
       const collided = playerCollisionCheck(this.players);
@@ -208,21 +206,23 @@ describe('Collision Manager', function() {
 
     it('should bounce a player off another player\'s head', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 }
+      this.players[0].velocity = { x: 0, y: 1 };
       this.players[1].position = { x: 500, y: 550 };
 
       const collided = playerCollisionCheck(this.players);
+      collided.should.be.true();
       this.players[0].position.y.should.decrease;
       this.players[0].position.x.should.change;
     });
 
     it('should register a kill when a player lands on top of another player', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 }
+      this.players[0].velocity = { x: 0, y: 1 };
       this.players[1].position = { x: 500, y: 550 };
       this.players[1].dead.should.be.false();
 
       const collided = playerCollisionCheck(this.players);
+      collided.should.be.true();
       this.players[1].dead.should.be.true();
     });
   });

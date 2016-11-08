@@ -1,7 +1,5 @@
-// import lolex from 'lolex';
 import sinon from 'sinon';
-import Player from '../lib/player'
-import Game from '../lib/game'
+import Player from '../lib/player';
 
 describe('Player', function() {
   beforeEach(function() {
@@ -14,7 +12,7 @@ describe('Player', function() {
 
   context('on player creation', function() {
     it('should have an id', function() {
-      this.p1.should.exist()
+      this.p1.should.exist();
       this.p1.id.should.eql(1);
     });
 
@@ -53,9 +51,6 @@ describe('Player', function() {
       it('should be able to jump', function() {
         this.p1.jump.should.exist();
         this.p1.jump().should.be.ok();
-        // expect(this.p1.jump()).to.change(p1, this.p1.position.y);
-        // this.p1.jump();
-        // this.p1.position.y.should.
       });
 
       it('should be able to double jump while jumping', function() {
@@ -116,8 +111,7 @@ describe('Player', function() {
       //TODO: decouple keyboard from player update function() or mock/spy isDown/isUp
       it.skip('should update player position', function() {
         this.p1.position = { x: 100, y: 100};
-        this.p1.update().should.change(p1, this.p1.position.y);
-        // this.p1.position.y.should.change;
+        this.p1.update().should.change(this.p1, this.p1.position.y);
       });
 
       it('should prevent player from moving off the map');
