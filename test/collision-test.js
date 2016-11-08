@@ -195,30 +195,32 @@ describe('Collision Manager', function() {
     });
 
     it('should not allow a player to fall through the top of another player', function() {
-      this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
-      this.players[1].position = { x: 500, y: 550 };
+      this.players[0].position = { x: 500, y: 450 };
+      this.players[0].velocity = { x: 0, y: 2 };
+      this.players[1].position = { x: 500, y: 500 };
+
+      this.players[1].dead.should.be.false();
 
       const collided = playerCollisionCheck(this.players);
       collided.should.be.true();
-      this.players[0].position.y.should.not.decrease;
+      this.players[0].velocity.y.should.be.below(0);
     });
 
     it('should bounce a player off another player\'s head', function() {
-      this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
-      this.players[1].position = { x: 500, y: 550 };
+      this.players[0].position = { x: 500, y: 450 };
+      this.players[0].velocity = { x: 0, y: 2 };
+      this.players[1].position = { x: 500, y: 500 };
+      this.players[1].dead.should.be.false();
 
       const collided = playerCollisionCheck(this.players);
       collided.should.be.true();
-      this.players[0].position.y.should.decrease;
-      this.players[0].position.x.should.change;
+      this.players[0].velocity.y.should.eql(-15);
     });
 
     it('should register a kill when a player lands on top of another player', function() {
-      this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
-      this.players[1].position = { x: 500, y: 550 };
+      this.players[0].position = { x: 500, y: 450 };
+      this.players[0].velocity = { x: 0, y: 2 };
+      this.players[1].position = { x: 500, y: 500 };
       this.players[1].dead.should.be.false();
 
       const collided = playerCollisionCheck(this.players);

@@ -80,21 +80,26 @@ describe('Player', function() {
     describe('Player#left()', function() {
       it('should be able to move left()', function() {
         this.p1.position = { x: 100, y: 100 };
+        this.p1.velocity = { x: 5, y: 0 };
+        const prevVelocity = { x: 5, y: 0 };
         this.p1.left();
-        this.p1.position.x.should.decrease;
+        this.p1.velocity.x.should.be.below(prevVelocity.x);
       });
     });
 
     describe('Player#right()', function() {
       it('should be able to move right', function() {
         this.p1.position = { x: 100, y: 100 };
+        this.p1.velocity = { x: 5, y: 0 };
+        const prevVelocity = { x: 5, y: 0 };
         this.p1.right();
-        this.p1.position.x.should.increase;
+        this.p1.velocity.x.should.be.above(prevVelocity.x);
       });
     });
 
     describe('Player#shoot()', function() {
       it('should be able to shoot bullets', function() {
+        this.p1.bullets.should.be.empty();
         this.p1.shoot();
         this.p1.bullets.should.have.length.of.at.least(1);
       });
@@ -103,7 +108,7 @@ describe('Player', function() {
         this.p1.shoot().should.be.ok();
         this.p1.bullets.should.have.length.of.at.least(1);
         this.p1.shoot().should.not.be.ok();
-        this.p1.bullets.should.not.change;
+        this.p1.bullets.should.not.be.above(1);
       });
     });
 
