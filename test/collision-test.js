@@ -4,9 +4,6 @@ import Platform from '../lib/platform';
 import Keyboard from '../lib/keyboard';
 import { platformCollisionCheck, playerCollisionCheck, projectileHitCheck } from '../lib/collision';
 
-// var expect = chai.expect
-// ...
-// expect(true).to.be.true();
 describe('Collision Manager', function() {
 
   before(function() {
@@ -187,7 +184,7 @@ describe('Collision Manager', function() {
       this.players[0].position = { x: 500, y: 500 };
       this.players[1].position = { x: 500, y: 450 };
 
-      this.players[0].jump();
+      // this.players[0].jump();
       const collided = playerCollisionCheck(this.players);
       this.players[1].position.should.not.change;
       this.players[0].position.x.should.increase;
@@ -196,7 +193,7 @@ describe('Collision Manager', function() {
 
     it('should not allow a player to fall through the top of another player', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
+      this.players[0].velocity = { x: 0, y: 2 };
       this.players[1].position = { x: 500, y: 550 };
 
       const collided = playerCollisionCheck(this.players);
@@ -206,7 +203,7 @@ describe('Collision Manager', function() {
 
     it('should bounce a player off another player\'s head', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
+      this.players[0].velocity = { x: 0, y: 2 };
       this.players[1].position = { x: 500, y: 550 };
 
       const collided = playerCollisionCheck(this.players);
@@ -217,7 +214,7 @@ describe('Collision Manager', function() {
 
     it('should register a kill when a player lands on top of another player', function() {
       this.players[0].position = { x: 500, y: 500 };
-      this.players[0].velocity = { x: 0, y: 1 };
+      this.players[0].velocity = { x: 0, y: 2 };
       this.players[1].position = { x: 500, y: 550 };
       this.players[1].dead.should.be.false();
 
