@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/game-time/";
+/******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -1546,13 +1546,13 @@
 
 	var soundArray = [{
 	  label: 'happyMusic',
-	  src: 'game-time/audio/happy.mp3'
+	  src: './audio/happy.mp3'
 	}, {
 	  label: 'loadingLoop',
-	  src: 'game-time/audio/loading-loop-0.wav'
+	  src: './audio/loading-loop-0.wav'
 	}, {
 	  label: 'theLastEncounterExtended',
-	  src: 'game-time/audio/tle-extended.mp3'
+	  src: './audio/tle-extended.mp3'
 	}];
 
 	exports.imageArray = imageArray;
