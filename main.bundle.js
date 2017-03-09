@@ -122,10 +122,10 @@
 	    var promises = [];
 	    promises.push(document.fonts.ready);
 	    promises.push(loader.loadImages(_assets.imageArray));
-	    promises.push(loader.loadSound('epicMusic', '../audio/battle.mp3'));
-	    promises.push(loader.loadSound('startScreenMusic', '../audio/caketown.mp3'));
-	    promises.push(loader.loadSound('battleMusic', '../audio/happy.mp3'));
-	    promises.push(loader.loadSound('winMusic', '../audio/annulet.wav'));
+	    promises.push(loader.loadSound('epicMusic', './audio/battle.mp3'));
+	    promises.push(loader.loadSound('startScreenMusic', './audio/caketown.mp3'));
+	    promises.push(loader.loadSound('battleMusic', './audio/happy.mp3'));
+	    promises.push(loader.loadSound('winMusic', './audio/annulet.wav'));
 
 	    // promises.push(loader.loadSounds(soundArray)); //TODO: fix to load multiple sounds
 	    return promises;
@@ -1546,13 +1546,13 @@
 
 	var soundArray = [{
 	  label: 'happyMusic',
-	  src: 'ericsayler.io/game-time/audio/happy.mp3'
+	  src: './audio/happy.mp3'
 	}, {
 	  label: 'loadingLoop',
-	  src: 'ericsayler.io/game-time/audio/loading-loop-0.wav'
+	  src: './audio/loading-loop-0.wav'
 	}, {
 	  label: 'theLastEncounterExtended',
-	  src: 'ericsayler.io/game-time/audio/tle-extended.mp3'
+	  src: './audio/tle-extended.mp3'
 	}];
 
 	exports.imageArray = imageArray;
