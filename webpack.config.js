@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: __dirname,
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    publicPath: '/'
   },
   module: {
     noParse: [
