@@ -1546,13 +1546,13 @@
 
 	var soundArray = [{
 	  label: 'happyMusic',
-	  src: 'http://ericsayler.io/game-time/audio/happy.mp3'
+	  src: 'ericsayler.io/game-time/audio/happy.mp3'
 	}, {
 	  label: 'loadingLoop',
-	  src: 'http://ericsayler.io/game-time/audio/loading-loop-0.wav'
+	  src: 'ericsayler.io/game-time/audio/loading-loop-0.wav'
 	}, {
 	  label: 'theLastEncounterExtended',
-	  src: 'http://ericsayler.io/game-time/audio/tle-extended.mp3'
+	  src: 'ericsayler.io/game-time/audio/tle-extended.mp3'
 	}];
 
 	exports.imageArray = imageArray;
