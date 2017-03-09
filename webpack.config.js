@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: "[name].bundle.js",
-    publicPath: '/'
+    publicPath: '/game-time/'
   },
   module: {
     noParse: [
